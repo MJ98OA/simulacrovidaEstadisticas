@@ -62,6 +62,5 @@
             <Font name="Liberation Mono" size="13.0" />
          </font></Label>
       <ImageView fx:id="pokemonEnemigo" fitHeight="180.0" fitWidth="230.0" layoutX="578.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="Alimentar" layoutX="684.0" layoutY="511.0" mnemonicParsing="false" onMouseClicked="#Alimentar" text="Alimentar" />
    </children>
 </AnchorPane>

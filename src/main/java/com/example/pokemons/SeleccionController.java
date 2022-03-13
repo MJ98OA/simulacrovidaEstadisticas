@@ -16,11 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SeleccionController {
-    public static List<Pokemons> listaAmigos = new ArrayList<>();
+
     public static ArrayList<ModelController> listaController = new ArrayList<>();
     List<Pokemons> listaPokemons = new ArrayList<>();
-    @FXML
-    public Button botonMochila;
 
     @FXML
     public Button cazaPokemon;
@@ -28,34 +26,6 @@ public class SeleccionController {
     @FXML
     private GridPane contenedorPokemons;
 
-    @FXML
-    private Button Amigos;
-
-    @FXML
-    private Label contadorAmigos;
-
-    @FXML
-    void Amigos(MouseEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("Amigos.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 900, 550);
-            Stage stage = new Stage();
-            stage.setTitle("New Window");
-            stage.setScene(scene);
-            stage.show();
-
-            AmigosController amigosController = fxmlLoader.getController();
-            amigosController.pasarInfo(this);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    void abrirMochila(MouseEvent event) {
-
-    }
 
     @FXML
     void cazarPokemons(MouseEvent event) {
@@ -112,8 +82,6 @@ public class SeleccionController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        botonMochila.setVisible(false);
         cazaPokemon.setVisible(false);
     }
 
@@ -146,7 +114,4 @@ public class SeleccionController {
         alert.showAndWait();
     }
 
-    public void actualizarContadorAmigos(){
-        contadorAmigos.setText(String.valueOf(listaAmigos.size()));
-    }
 }

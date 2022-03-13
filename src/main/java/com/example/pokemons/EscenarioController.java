@@ -26,27 +26,6 @@ public class EscenarioController {
     private SeleccionController seleccionController=null;
 
     @FXML
-    private Button Alimentar;
-
-    @FXML
-    void Alimentar(MouseEvent event) throws IOException {
-            if(new Random().nextBoolean()){
-                listaPokemons.get(i).vecesAlimentado+=1;
-                Pokemons pokeAmigo= new Pokemons(listaPokemons.get(i).nombrepokemon,listaPokemons.get(i).vecesAlimentado);
-                seleccionController.listaAmigos.add(pokeAmigo);
-                listaPokemons.get(i).vecesAlimentado=0;
-                seleccionController.actualizarContadorAmigos();
-                alertacaza();
-            }else{
-                listaPokemons.get(i).vecesAlimentado+=1;
-                ataques(new Random().nextInt(2)+1);
-                vidaMiPokemon.setProgress(cargarvidaMiPokemon());
-                seleccionController.actualizarpoke();
-            }
-
-    }
-
-    @FXML
     private Button bAtacar;
 
     @FXML
@@ -192,7 +171,7 @@ public class EscenarioController {
 
 
     @FXML
-    void bCurar(MouseEvent event) {
+    void bCurar(MouseEvent event) throws IOException {
         curarse();
         curarseEnemigo();
 
@@ -271,27 +250,6 @@ public class EscenarioController {
 
     }
 
-    public void alertacaza() {
-        Alert customAlert = new Alert(Alert.AlertType.NONE);
-        customAlert.setTitle("Pokemon Alimentado");
-        customAlert.setContentText("El pokemon: "+listaPokemons.get(i).getNombrepokemon() +" se ha hecho tu amigo");
-        customAlert.getDialogPane().getButtonTypes().addAll(ButtonType.CLOSE);
-        showAlertcaza(customAlert);
-
-    }
-
-    private void showAlertcaza(Alert alert) {
-
-        Optional<ButtonType> resultado = alert.showAndWait();
-
-        if (resultado.get() == ButtonType.CLOSE) {
-            Stage stage = (Stage) fondoBatalla.getScene().getWindow();
-            stage.close();
-        }
-
-    }
-
-
 
     public Boolean vivoCombate() {
         return (listaPokemons.get(i).getVidaActual()>0);
@@ -299,7 +257,7 @@ public class EscenarioController {
 
     public Boolean vivoCombateAliado() {return (datosMiPokemon.getVidaActual()>0);}
 
-    public void curarse() {
+    public void curarse() throws IOException {
         Random r = new Random();
         int n = r.nextInt(75 - 25 + 1) + 25;
 
@@ -308,11 +266,13 @@ public class EscenarioController {
             vidaMiPokemon.setProgress(cargarvidaMiPokemon());
             vidaActualA.setText(datosMiPokemon.getVidaMaxima() + "");
             cargarvidaMiPokemon();
+            seleccionController.actualizarpoke();
         } else {
             datosMiPokemon.setVidaActual(datosMiPokemon.getVidaActual() + n);
             vidaMiPokemon.setProgress(cargarvidaMiPokemon());
             vidaActualA.setText(datosMiPokemon.getVidaActual() + "");
             cargarvidaMiPokemon();
+            seleccionController.actualizarpoke();
         }
 
 

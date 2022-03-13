@@ -64,7 +64,6 @@ public class ModelController {
         vidaActual.setTextFill(Paint.valueOf("#E8F6F8"));
         vidaMaxima.setTextFill(Paint.valueOf("#E8F6F8"));
         barra.setTextFill(Paint.valueOf("#E8F6F8"));
-        controllerVentanaAnterior.botonMochila.setVisible(true);
         controllerVentanaAnterior.cazaPokemon.setVisible(true);
         pokemons.seleccionado = true;
 

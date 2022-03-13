@@ -23,18 +23,8 @@ public class Pokemons {
         this.seleccionado = seleccionado;
     }
 
-    public int getVecesAlimentado() {
-        return vecesAlimentado;
-    }
 
-    public void setVecesAlimentado(int vecesAlimentado) {
-        this.vecesAlimentado = vecesAlimentado;
-    }
 
-    Pokemons(String nombrepokemon,int vecesAlimentado){
-        this.nombrepokemon=nombrepokemon;
-        this.vecesAlimentado=vecesAlimentado;
-    }
 
     Pokemons(String nombrepokemon,int nivelpokemon,String imgenpokemon,String imagengenero,String imagenps,int vidaActual,int vidaMaxima,int vecesAlimentado,boolean seleccionado){
         this.nombrepokemon=nombrepokemon;
