@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="900.0" style="-fx-background-color: #675073;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokemons.SeleccionController">
+   <children>
+      <GridPane fx:id="contenedorPokemons" alignment="CENTER_LEFT" layoutX="32.0" layoutY="49.0" prefHeight="452.0" prefWidth="835.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+      </GridPane>
+      <Button fx:id="botonMochila" layoutX="327.0" layoutY="512.0" mnemonicParsing="false" onMouseClicked="#abrirMochila" text="Mochila" />
+      <Button fx:id="cazaPokemon" layoutX="471.0" layoutY="512.0" mnemonicParsing="false" onMouseClicked="#cazarPokemons" text="Cazar" />
+      <Button fx:id="Amigos" layoutX="585.0" layoutY="512.0" mnemonicParsing="false" onMouseClicked="#Amigos" text="Amigos" />
+      <Label layoutX="18.0" layoutY="516.0" text="Contador Amigos: " textFill="#d8eeed">
+         <font>
+            <Font name="Liberation Mono" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="contadorAmigos" layoutX="147.0" layoutY="516.0" text="0" textFill="#d8eeed">
+         <font>
+            <Font name="Liberation Mono" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

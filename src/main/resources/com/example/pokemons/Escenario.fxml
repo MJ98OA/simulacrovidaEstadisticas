@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="fondoBatalla" prefHeight="550.0" prefWidth="900.0" style="-fx-background-color: #57D458;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokemons.EscenarioController">
+   <children>
+      <ImageView fx:id="fondo" fitHeight="550.0" fitWidth="900.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <ProgressBar fx:id="vidaMiPokemon" layoutX="272.0" layoutY="404.0" prefHeight="18.0" prefWidth="155.0" progress="0.0" />
+      <Label fx:id="nivelMiPokemon" layoutX="399.0" layoutY="386.0" style="-fx-text-fill: white;" text="Label">
+         <font>
+            <Font name="Liberation Mono" size="13.0" />
+         </font></Label>
+      <Label fx:id="nombreMiPokemon" layoutX="282.0" layoutY="386.0" style="-fx-text-fill: white;" text="Label">
+         <font>
+            <Font name="Liberation Mono" size="13.0" />
+         </font></Label>
+      <Label fx:id="nivelPokemonEnemigo" layoutX="424.0" layoutY="206.0" style="-fx-text-fill: white;" text="Label">
+         <font>
+            <Font name="Liberation Mono" size="13.0" />
+         </font></Label>
+      <Label fx:id="nombrePokemonEnemigo" layoutX="530.0" layoutY="206.0" style="-fx-text-fill: white;" text="Label">
+         <font>
+            <Font name="Liberation Mono" size="13.0" />
+         </font></Label>
+      <ImageView fx:id="miPokemon" fitHeight="195.0" fitWidth="244.0" layoutX="28.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true" />
+      <ProgressBar fx:id="vidaPokemonEnemigo" layoutX="424.0" layoutY="224.0" prefHeight="18.0" prefWidth="154.0" progress="0.0" />
+      <ImageView fx:id="psimgE" fitHeight="18.0" fitWidth="34.0" layoutX="390.0" layoutY="224.0" onMouseEntered="#mostrarvidaE" onMouseExited="#ocultarvidaE" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="psimgA" fitHeight="18.0" fitWidth="34.0" layoutX="433.0" layoutY="404.0" onMouseEntered="#mostrarvida" onMouseExited="#ocultarvida" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="txAtaque1" layoutX="550.0" layoutY="413.0" onMouseClicked="#bAtaque1" text="Ataque Seguro">
+         <font>
+            <Font name="Liberation Mono" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="txAtaque2" layoutX="720.0" layoutY="412.0" onMouseClicked="#bAtaque2" text="Ataque Arriesgado">
+         <font>
+            <Font name="Liberation Mono" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="txAtaque3" layoutX="520.0" layoutY="469.0" onMouseClicked="#bAtaque3" text="Ataque Muy Arriesgado">
+         <font>
+            <Font name="Liberation Mono" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="txCancelar" layoutX="772.0" layoutY="469.0" onMouseClicked="#bcancelar" text="Cancelar">
+         <font>
+            <Font name="Liberation Mono" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="bAtacar" layoutX="565.0" layoutY="433.0" mnemonicParsing="false" onMouseClicked="#bMenuAtaques" prefHeight="26.0" prefWidth="86.0" text="Atacar" />
+      <Button fx:id="bCurar" layoutX="765.0" layoutY="433.0" mnemonicParsing="false" onMouseClicked="#bCurar" prefHeight="26.0" prefWidth="86.0" text="Curar" />
+      <Label fx:id="vidaActualE" layoutX="387.0" layoutY="225.0" onMouseEntered="#mostrarvidaE" onMouseExited="#ocultarvidaE" prefHeight="18.0" prefWidth="34.0" style="-fx-text-fill: white;" text="Label" visible="false">
+         <font>
+            <Font name="Liberation Mono" size="13.0" />
+         </font></Label>
+      <Label fx:id="vidaActualA" layoutX="428.0" layoutY="403.0" onMouseEntered="#mostrarvida" onMouseExited="#ocultarvida" prefHeight="18.0" prefWidth="34.0" style="-fx-text-fill: white;" text="Label" visible="false">
+         <font>
+            <Font name="Liberation Mono" size="13.0" />
+         </font></Label>
+      <ImageView fx:id="pokemonEnemigo" fitHeight="180.0" fitWidth="230.0" layoutX="578.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="Alimentar" layoutX="684.0" layoutY="511.0" mnemonicParsing="false" onMouseClicked="#Alimentar" text="Alimentar" />
+   </children>
+</AnchorPane>
