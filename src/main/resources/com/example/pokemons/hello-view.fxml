@@ -13,5 +13,7 @@
         </columnConstraints>
       </GridPane>
       <Button fx:id="cazaPokemon" layoutX="471.0" layoutY="512.0" mnemonicParsing="false" onMouseClicked="#cazarPokemons" text="Cazar" />
+      <Button fx:id="mochila" layoutX="351.0" layoutY="512.0" mnemonicParsing="false" onMouseClicked="#abrirMochila" text="Mochila" />
+      <Button fx:id="estadisticas" layoutX="215.0" layoutY="512.0" mnemonicParsing="false" onMouseClicked="#abrirEstadisticas" text="Estadisticas" />
    </children>
 </AnchorPane>

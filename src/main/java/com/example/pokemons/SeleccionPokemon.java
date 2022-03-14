@@ -15,6 +15,7 @@ public class SeleccionPokemon extends Application {
         stage.setResizable(false);
         SeleccionController seleccionController = fxmlLoader.getController();
         seleccionController.cargarModelos();
+        seleccionController.obtenerEstadiscticas();
         stage.setTitle("Seleccion Pokemons");
         stage.setScene(scene);
         stage.show();

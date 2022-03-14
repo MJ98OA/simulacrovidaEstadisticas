@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -19,12 +18,63 @@ public class SeleccionController {
 
     public static ArrayList<ModelController> listaController = new ArrayList<>();
     List<Pokemons> listaPokemons = new ArrayList<>();
+    EstadisticasController estadisticasController = null;
+
 
     @FXML
     public Button cazaPokemon;
 
     @FXML
     private GridPane contenedorPokemons;
+
+    @FXML
+    private Button estadisticas;
+
+    @FXML
+    private Button mochila;
+
+    @FXML
+    void abrirEstadisticas(MouseEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("Estadisticas.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 900, 550);
+            Stage stage = new Stage();
+            stage.setTitle("New Window");
+            stage.setScene(scene);
+            stage.show();
+
+            EstadisticasController controller = fxmlLoader.getController();
+            estadisticasController = controller;
+            controller.pasarInfoEstadisticas(this);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void abrirMochila(MouseEvent event) {
+        if (!comprobarTodosCurados())
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("Mochila.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), 900, 550);
+                Stage stage = new Stage();
+                stage.setTitle("New Window");
+                stage.setScene(scene);
+                stage.show();
+
+                MochilaController controller = fxmlLoader.getController();
+                controller.pasarInfo(this);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        else
+            mostrarAlertaTodosCurados();
+
+    }
 
 
     @FXML
@@ -50,6 +100,16 @@ public class SeleccionController {
         }
     }
 
+    public boolean comprobarTodosCurados() {
+
+        int contador=0;
+        for (int i = 0; i < Pokemons.PokemonRepository.getData().size(); i++) {
+            if (Pokemons.PokemonRepository.getData().get(i).vidaActual == Pokemons.PokemonRepository.getData().get(i).getVidaMaxima())
+                contador+=1;
+        }
+
+        return contador== Pokemons.PokemonRepository.getData().size();
+    }
 
     public void cargarModelos() {
 
@@ -82,6 +142,7 @@ public class SeleccionController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         cazaPokemon.setVisible(false);
     }
 
@@ -113,5 +174,34 @@ public class SeleccionController {
         alert.setContentText("El pokemon: " + retornarPokemon().pokemons.nombrepokemon + " esta muerto");
         alert.showAndWait();
     }
+
+    private void mostrarAlertaTodosCurados() {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setHeaderText(null);
+        alert.setTitle("Todos Curados");
+        alert.setContentText("Todos los pokemons estan al pleno");
+        alert.showAndWait();
+    }
+
+    public void obtenerEstadiscticas() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("Estadisticas.fxml"));
+            AnchorPane anchorPane = fxmlLoader.load();
+            EstadisticasController estadisticasController = fxmlLoader.getController();
+            this.estadisticasController = estadisticasController;
+            System.out.println(estadisticasController.totalcuraciones);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public void actualizarEstadisticas() {
+        estadisticasController.actualizar();
+    }
+
 
 }

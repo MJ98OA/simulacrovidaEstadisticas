@@ -16,6 +16,7 @@ import java.io.IOException;
 public class ModelController {
     public Pokemons pokemons;
     private SeleccionController controllerVentanaAnterior;
+    boolean vuelta=true;
 
     @FXML
     private ImageView efecto;
@@ -84,6 +85,11 @@ public class ModelController {
         imgpokemon.setImage(imgpoke);
         Image imgps = new Image(pokemons.getImagenps());
         iconopspokemon.setImage(imgps);
+        if(vuelta){
+            pokemons.setVidaActual(pokemons.getVidaActual()/2);
+            vuelta=false;
+        }
+
         cargarvidaMiPokemon(pokemons);
 
 

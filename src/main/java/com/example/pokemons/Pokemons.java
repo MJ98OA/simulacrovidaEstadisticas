@@ -13,7 +13,8 @@ public class Pokemons {
     public int vidaActual;
     private int vidaMaxima;
     public boolean seleccionado;
-    public int vecesAlimentado;
+    public double cantidadCuras;
+
 
     public boolean isSeleccionado() {
         return seleccionado;
@@ -26,7 +27,7 @@ public class Pokemons {
 
 
 
-    Pokemons(String nombrepokemon,int nivelpokemon,String imgenpokemon,String imagengenero,String imagenps,int vidaActual,int vidaMaxima,int vecesAlimentado,boolean seleccionado){
+    Pokemons(String nombrepokemon, int nivelpokemon, String imgenpokemon, String imagengenero, String imagenps, int vidaActual, int vidaMaxima, int cantidadCuras, boolean seleccionado){
         this.nombrepokemon=nombrepokemon;
         this.nivelpokemon=nivelpokemon;
         this.imgenpokemon=imgenpokemon;
@@ -34,7 +35,7 @@ public class Pokemons {
         this.imagenps=imagenps;
         this.vidaActual=vidaActual;
         this.vidaMaxima=vidaMaxima;
-        this.vecesAlimentado=vecesAlimentado;
+        this.cantidadCuras = cantidadCuras;
         this.seleccionado=seleccionado;
     }
 
@@ -104,7 +105,7 @@ public class Pokemons {
                 return listaPokemons;
             }
 
-            Pokemons p1=new Pokemons("Miutu",126,"src\\main\\java\\com\\example\\pokemons\\img\\mewtwo.gif","src\\main\\java\\com\\example\\pokemons\\img\\male.png","src\\main\\java\\com\\example\\pokemons\\img\\ps.png",20,200,0,false);
+            Pokemons p1=new Pokemons("Miutu",126,"src\\main\\java\\com\\example\\pokemons\\img\\mewtwo.gif","src\\main\\java\\com\\example\\pokemons\\img\\male.png","src\\main\\java\\com\\example\\pokemons\\img\\ps.png",200,200,0,false);
             Pokemons p2=new Pokemons("Aggron",173,"src\\main\\java\\com\\example\\pokemons\\img\\aggron-mega.gif","src\\main\\java\\com\\example\\pokemons\\img\\male.png","src\\main\\java\\com\\example\\pokemons\\img\\ps.png",180,180,0,false);
             Pokemons p3=new Pokemons("Arceus",128,"src\\main\\java\\com\\example\\pokemons\\img\\arceus.gif","src\\main\\java\\com\\example\\pokemons\\img\\male.png","src\\main\\java\\com\\example\\pokemons\\img\\ps.png",190,190,0,false);
             Pokemons p4=new Pokemons("dialga",165,"src\\main\\java\\com\\example\\pokemons\\img\\dialga.gif","src\\main\\java\\com\\example\\pokemons\\img\\male.png","src\\main\\java\\com\\example\\pokemons\\img\\ps.png",160,160,0,false);

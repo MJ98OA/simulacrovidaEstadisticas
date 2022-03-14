@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokemons.MochilaController">
+   <children>
+      <VBox layoutX="10.0" layoutY="25.0" prefHeight="500.0" prefWidth="880.0">
+         <children>
+            <HBox fx:id="cura10" alignment="CENTER" onMouseClicked="#curar10ps" prefHeight="125.0" prefWidth="200.0">
+               <children>
+                  <Label text="Cura a tu pokemon 10 puntos de vida">
+                     <HBox.margin>
+                        <Insets right="60.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Liberation Mono" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="cura10ps" fitHeight="125.0" fitWidth="150.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../../java/com/example/pokemons/img/poti1.png" />
+                     </image></ImageView>
+               </children>
+            </HBox>
+            <HBox fx:id="cura20" alignment="CENTER" onMouseClicked="#curar20ps" prefHeight="125.0" prefWidth="200.0">
+               <children>
+                  <Label text="Cura a tu pokemon 20 puntos de vida">
+                     <HBox.margin>
+                        <Insets right="60.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Liberation Mono" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="cura20ps" fitHeight="125.0" fitWidth="150.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../../java/com/example/pokemons/img/poti2.png" />
+                     </image></ImageView>
+               </children>
+            </HBox>
+            <HBox fx:id="cura10por100" alignment="CENTER" onMouseClicked="#curar10prc" prefHeight="125.0" prefWidth="200.0">
+               <children>
+                  <Label text="Cura a tu pokemon un 10% de su vida total">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Liberation Mono" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="cura10pr" fitHeight="125.0" fitWidth="150.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../../java/com/example/pokemons/img/potiporcentaje1.png" />
+                     </image></ImageView>
+               </children>
+            </HBox>
+            <HBox fx:id="cura20por100" alignment="CENTER" onMouseClicked="#curar20prc" prefHeight="125.0" prefWidth="200.0">
+               <children>
+                  <Label text="Cura a tu pokemon un 20% de su vida total">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Liberation Mono" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="cura20pr" fitHeight="125.0" fitWidth="150.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../../java/com/example/pokemons/img/potiporcentaje2.png" />
+                     </image></ImageView>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
